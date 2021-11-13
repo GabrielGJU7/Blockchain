@@ -26,6 +26,16 @@ class Blockchain:
             return block
 
     def getPreviousBlock(self):
-        return self.chain[-1]        
+        return self.chain[-1]
 
+    def proof_of_word(self, previous_proof):
+        new_proof = 1
+        check_proof = False
+        
+        while check_proof is False:
+            hash_operation = hashlib.sha256( str(new_proof ** 2 - previous_proof ** 2).encode()).hexdigest()
+            if hashlib[:4] == '0000':
+                check_proof = True
+            else: new_proof  += 1    
+        return new_proof        
 # Parte 2 - Minado de un bloque de la cadena
