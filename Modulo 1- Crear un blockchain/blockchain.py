@@ -1,1 +1,19 @@
 #Modulo 1 - Creae una cadena de bloques
+
+# Importar las librerias
+
+import datetime
+import hashlib
+import json
+from flask import Flask, jsonify
+
+# Parte 1 - Crear la cadena de Bloques
+
+class Blockchain:
+
+    def __init__(self):
+        self.chain = []
+        self.create_block(proof = 1, previous_hash = '0')
+
+
+# Parte 2 - Minado de un bloque de la cadena
